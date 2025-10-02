@@ -15,6 +15,10 @@ julia> using Pkg
 julia> Pkg.add("ExactCI")
 ```
 
+## Examples
+
+See `examples` folder.
+
 ## List of keyword arguments
 
 ### Required
