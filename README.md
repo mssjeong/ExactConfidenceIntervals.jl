@@ -34,7 +34,7 @@ julia> Pkg.add("ExactCI")
 - `num_sim`: Number of simulated random samples used when calculating probabilities under $\mathbb{P}^{\theta_i,\theta_{-i}}$.
 - `opt_max_iter`: Maximum iteration number for the numerical optimization of $\Phi(\beta)=0$.
 - `positive`: Vector of indices of the parameters with a constraint $\theta_i\geq 0$.
-- `prob_tol`: Tolerance level for the numerical optimization when solving $\Phi(\beta)=0$.
+- `prob_tol`: Tolerance level for the numerical optimization when solving $\Phi(\beta)=0$. Defaults to 0.005.
 - `robust`: Degree of robustness check. Defaults to 3.
 - `seed`: Seeds for random number generation. Defaults to `Xoshiro(0)`.
 
