@@ -1,6 +1,6 @@
 # ExactCI.jl
 
-A Julia package that calculates the exact confidence intervals of maximum likelihood estimators.
+A Julia package that calculates the exact confidence intervals of maximum likelihood estimators. An implementation of the method proposed in Jeong (2023).
 
 ## Installation
 
@@ -39,3 +39,5 @@ julia> Pkg.add("ExactCI")
 - `seed`: Seeds for random number generation. Defaults to `Xoshiro(0)`.
 
 ## Reference
+
+Jeong M (2023). “A numerical method to obtain exact confidence intervals for likelihoodbased parameter estimators.” Journal of Statistical Planning and Inference, 226, 20–29. doi:10.1016/j.jspi.2022.12.006.
