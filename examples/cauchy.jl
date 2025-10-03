@@ -1,13 +1,12 @@
 # Cauchy distribution
 using Distributed
-using Pkg
 using CSV
 using DataFrames
 
 addprocs(Threads.nthreads(); exeflags=`--threads=1`)
 println("Number of workers: ",nworkers())
 
-@everywhere using ExactCI
+@everywhere using ExactConfidenceIntervals
 @everywhere using Distributions
 
 @everywhere function gen_cauchy(th,n)
@@ -24,3 +23,4 @@ df = CSV.read("cauchy.csv", DataFrame)
 y = df[:,"y"]
 
 th, ci = exactci(y, generator=gen_cauchy, likelihood=lik_cauchy, positive=[2])
+
