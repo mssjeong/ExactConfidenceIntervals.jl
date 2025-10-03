@@ -1,13 +1,12 @@
 # logistic regression
 using Distributed
-using Pkg
 using CSV
 using DataFrames
 
 addprocs(Threads.nthreads(); exeflags=`--threads=1`)
 println("Number of workers: ",nworkers())
 
-@everywhere using ExactCI
+@everywhere using ExactConfidenceIntervals
 @everywhere using Distributions
 
 @everywhere function gen_logit(th,n,x)
@@ -35,3 +34,4 @@ y = df[:,"y"]
 x = Array(df[:,["x0","x1","x2"]])
 
 th, ci = exactci(y, x, generator=gen_logit, likelihood=lik_logit)
+
