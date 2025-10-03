@@ -1,4 +1,4 @@
-name = "ExactCI"
+name = "ExactConfidenceIntervals"
 uuid = "cb5439cf-0c05-4d39-a458-fd4a793d2bb3"
 authors = ["Minsoo Jeong"]
 version = "0.1.0"
