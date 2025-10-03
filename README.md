@@ -7,12 +7,27 @@ A Julia package that calculates the exact confidence intervals of maximum likeli
 ```
 pkg> add ExactCI
 ```
-
 or
-
 ```
 julia> using Pkg
 julia> Pkg.add("ExactCI")
+```
+
+## Usage
+
+Two-sided confidence intervals
+```
+th, ci = exactci(y, generator=generator_function, likelihood=likelihood_function)
+```
+
+Left-sided condidence intervals
+```
+th, ci = exactci_left(y,generator=,likelihood=)
+```
+
+Right-sided confidence intervals
+```
+th, ci = exactci_right(y,generator=,likelihood=)
 ```
 
 ## Examples
