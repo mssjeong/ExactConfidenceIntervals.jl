@@ -4,11 +4,11 @@ A Julia package for computing exact confidence intervals of maximum likelihood e
 
 ## Installation
 
-```
+```julia
 pkg> add ExactCI
 ```
 or
-```
+```julia
 julia> using Pkg
 julia> Pkg.add("ExactCI")
 ```
@@ -16,12 +16,12 @@ julia> Pkg.add("ExactCI")
 ## Basic usage
 
 Models without exogenous variables:
-```
+```julia
 th, ci = exactci(y, generator=generator_function, likelihood=likelihood_function)
 ```
 
 Models with exogenous variables:
-```
+```julia
 th, ci = exactci(y, x, generator=generator_function, likelihood=likelihood_function)
 ```
 
