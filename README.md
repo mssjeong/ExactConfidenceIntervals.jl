@@ -15,20 +15,17 @@ julia> Pkg.add("ExactCI")
 
 ## Usage
 
-Two-sided confidence intervals
+Models without exogenous variables
 ```
 th, ci = exactci(y, generator=generator_function, likelihood=likelihood_function)
 ```
 
-Left-sided condidence intervals
+Models with exogenous variables
 ```
-th, ci = exactci_left(y,generator=,likelihood=)
+th, ci = exactci(y, x, generator=generator_function, likelihood=likelihood_function)
 ```
 
-Right-sided confidence intervals
-```
-th, ci = exactci_right(y,generator=,likelihood=)
-```
+Replace `exactci` with `exactci_left` to obtain left-sided confidence intervals, and with `exactci_right` to obtain right-sided confidence intervals.
 
 ## Examples
 
