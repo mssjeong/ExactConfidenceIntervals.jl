@@ -17,12 +17,12 @@ julia> Pkg.add("ExactCI")
 
 Models without exogenous variables:
 ```julia
-th, ci = exactci(y, generator=generator_function, likelihood=likelihood_function)
+th, ci = exactci(y, generator=function_name, likelihood=function_name)
 ```
 
 Models with exogenous variables:
 ```julia
-th, ci = exactci(y, x, generator=generator_function, likelihood=likelihood_function)
+th, ci = exactci(y, x, generator=function_name, likelihood=function_name)
 ```
 
 Replace `exactci` with `exactci_left` to obtain left-sided confidence intervals, and with `exactci_right` to obtain right-sided confidence intervals.
