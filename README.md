@@ -15,12 +15,12 @@ julia> Pkg.add("ExactCI")
 
 ## Usage
 
-Models without exogenous variables
+Models without exogenous variables:
 ```
 th, ci = exactci(y, generator=generator_function, likelihood=likelihood_function)
 ```
 
-Models with exogenous variables
+Models with exogenous variables:
 ```
 th, ci = exactci(y, x, generator=generator_function, likelihood=likelihood_function)
 ```
