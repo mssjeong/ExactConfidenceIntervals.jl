@@ -36,7 +36,7 @@ When defining the generator and likelihood functions, do not specify the input v
 - `format`: Number format for the parameter estimation. Available values are `:BigFloat` and `:Float64`. Defaults to `:Float64`.
 - `mle_init`: Vector of initial values of the model parameters for the maximum likelihood estimation. Defaults to a vector of 0.5s.
 - `mle_max_iter`: Maximum iteration number for the maximum likelihood estimation of model parameters.
-- `num_par`: Number of parameters of the model. This only needs to be specified when the automatic counting fails.
+- `num_par`: Number of parameters of the model. Only needs to be specified when the automatic counting fails.
 - `num_sim`: Number of simulated random samples used when calculating probabilities under $\mathbb{P}^{\theta_i,\theta_{-i}}$.
 - `opt_max_iter`: Maximum iteration number for the numerical optimization when computing confidence intervals.
 - `positive`: Vector of indices of the parameters with a constraint $\theta_i\geq 0$.
