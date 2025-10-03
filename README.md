@@ -5,12 +5,12 @@ A Julia package for computing exact confidence intervals of maximum likelihood e
 ## Installation
 
 ```julia
-pkg> add ExactCI
+pkg> add ExactConfidenceIntervals
 ```
 or
 ```julia
 julia> using Pkg
-julia> Pkg.add("ExactCI")
+julia> Pkg.add("ExactConfidenceIntervals")
 ```
 
 ## Basic usage
