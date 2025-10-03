@@ -1,9 +1,7 @@
 # Lindley distribution
-using Pkg
 using CSV
 using DataFrames
-
-using ExactCI
+using ExactConfidenceIntervals
 using Distributions
 
 function gen_lindley(th,n)
@@ -19,3 +17,4 @@ df = CSV.read("lindley.csv", DataFrame)
 y = df[:,"y"]
 
 th, ci = exactci(y, generator=gen_lindley, likelihood=lik_lindley, positive=[1])
+
