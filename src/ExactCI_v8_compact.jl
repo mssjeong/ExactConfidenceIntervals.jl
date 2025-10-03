@@ -1,4 +1,4 @@
-module ExactCI_v8_clean
+module ExactCI
 using Random
 using Distributions
 using LinearAlgebra
@@ -2791,3 +2791,4 @@ function exactci(datax::Array{Float64},external::Array{Float64}=[0.0];
 end
 
 end
+
