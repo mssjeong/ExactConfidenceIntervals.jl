@@ -24,7 +24,7 @@ See `examples` folder.
 ### Required
 
 - `generator`: Random sample generator of the model. Define the function such that `y::Array = function_name(th::Vector, n::Int)` for models without exogenous variables, and `y::Array = function_name(th::Vector, n::Int, x::Array)` for models with exogenous variables.
-- `likelihood`: Likelihood function of the model. Define the function such that `z::Float = function_name(th::Vector, y::Array)` for models without exogenous variables, and `z::Float = function_name(th::Vector, y::Array, x::Array)` for models with exogenous variables. The output variable `z` represents the sum of the log-likelihoods or the product of the likelihoods.
+- `likelihood`: Likelihood function of the model. Define the function such that `z::Float = function_name(th::Vector, y::Array)` for models without exogenous variables, and `z::Float = function_name(th::Vector, y::Array, x::Array)` for models with exogenous variables.
 
 When defining the generator and likelihood functions, the input variable types must not be specified because they are assigned automatically according to the `format` keyword argument.
 
