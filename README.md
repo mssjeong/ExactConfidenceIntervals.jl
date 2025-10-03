@@ -43,7 +43,7 @@ When defining the generator and likelihood functions, do not specify the input v
 ### Optional
 
 - `alpha`: Significance level of the confidence intervals. Defaults to 0.05.
-- `appx_order`: Order of the Taylor series for the approximation function. Defaults to 2.
+- `appx_order`: Order of the Taylor series to approximate the invariant quantile function. Defaults to 2.
 - `bounded`: Vector of indices of the parameters with a constraint $-1\leq\theta_i\leq 1$. Reparameterize the model to impose different range constraints.
 - `format`: Number format for the parameter estimation. Available values are `:BigFloat` and `:Float64`. Defaults to `:Float64`.
 - `mle_init`: Vector of initial values of the model parameters for the maximum likelihood estimation. Defaults to a vector of 0.5s.
