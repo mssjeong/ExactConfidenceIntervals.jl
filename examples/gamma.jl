@@ -1,13 +1,12 @@
 # gamma distribution
 using Distributed
-using Pkg
 using CSV
 using DataFrames
 
 addprocs(Threads.nthreads(); exeflags=`--threads=1`)
 println("Number of workers: ",nworkers())
 
-@everywhere using ExactCI
+@everywhere using ExactConfidenceIntervals
 @everywhere using Distributions
 @everywhere using SpecialFunctions
 
@@ -25,3 +24,4 @@ df = CSV.read("gamma.csv", DataFrame)
 y = df[:,"y"]
 
 th, ci = exactci(y, generator=gen_gamma, likelihood=lik_gamma, positive=[1,2])
+
