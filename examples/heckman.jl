@@ -1,13 +1,12 @@
 # Heckman selection model
 using Distributed
-using Pkg
 using CSV
 using DataFrames
 
 addprocs(Threads.nthreads(); exeflags=`--threads=1`)
 println("Number of workers: ",nworkers())
 
-@everywhere using ExactCI
+@everywhere using ExactConfidenceIntervals
 @everywhere using Distributions
 @everywhere using SpecialFunctions
 
@@ -97,3 +96,4 @@ y = Array(df[:,["s","y"]])
 x = Array(df[:,["z0","z1","x0","x1"]])
 
 th, ci = exactci(y, x, generator=gen_heckman, likelihood=lik_heckman, positive=[1], bounded=[2])
+
