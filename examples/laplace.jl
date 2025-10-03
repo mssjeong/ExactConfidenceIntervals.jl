@@ -1,13 +1,12 @@
 # asymmetric Laplace distribution
 using Distributed
-using Pkg
 using CSV
 using DataFrames
 
 addprocs(Threads.nthreads(); exeflags=`--threads=1`)
 println("Number of workers: ",nworkers())
 
-@everywhere using ExactCI
+@everywhere using ExactConfidenceIntervals
 @everywhere using Distributions
 
 @everywhere function gen_laplace(th,n)
@@ -41,3 +40,4 @@ df = CSV.read("laplace.csv", DataFrame)
 y = df[:,"y"]
 
 th, ci = exactci(y, generator=gen_laplace, likelihood=lik_laplace, positive=[2,3])
+
