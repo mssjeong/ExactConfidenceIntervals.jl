@@ -1,4 +1,4 @@
-# ExactCI.jl
+# ExactConfidenceIntervals.jl
 
 A Julia package for computing exact confidence intervals of maximum likelihood estimators, implementing the method proposed in Jeong (2023).
 
