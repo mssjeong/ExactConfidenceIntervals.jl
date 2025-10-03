@@ -1,13 +1,12 @@
 # Ornstein-Uhlenbeck process
 using Distributed
-using Pkg
 using CSV
 using DataFrames
 
 addprocs(Threads.nthreads(); exeflags=`--threads=1`)
 println("Number of workers: ",nworkers())
 
-@everywhere using ExactCI
+@everywhere using ExactConfidenceIntervals
 @everywhere using Distributions
 
 @everywhere function gen_ou(th,n)
@@ -86,3 +85,4 @@ y = df[:,"y"]
 @everywhere const delta = 0.004   # observation frequency of the data
 
 th, ci = exactci(y, generator=gen_ou, likelihood=lik_ou, positive=[3], appx_order=6)
+
