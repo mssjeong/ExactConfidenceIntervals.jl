@@ -1,13 +1,12 @@
 # GARCH(1,1) process
 using Distributed
-using Pkg
 using CSV
 using DataFrames
 
 addprocs(Threads.nthreads(); exeflags=`--threads=1`)
 println("Number of workers: ",nworkers())
 
-@everywhere using ExactCI
+@everywhere using ExactConfidenceIntervals
 @everywhere using Distributions
 
 @everywhere function gen_garch(th,n)
@@ -46,3 +45,4 @@ df = CSV.read("garch.csv", DataFrame)
 y = df[:,"y"]
 
 th, ci = exactci(y, generator=gen_garch, likelihood=lik_garch, positive=[1,2,3], appx_order=4)
+
