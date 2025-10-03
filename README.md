@@ -13,7 +13,7 @@ julia> using Pkg
 julia> Pkg.add("ExactCI")
 ```
 
-## Usage
+## Basic usage
 
 Models without exogenous variables:
 ```
