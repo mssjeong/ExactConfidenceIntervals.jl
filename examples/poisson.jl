@@ -1,13 +1,12 @@
 # Poisson regression
 using Distributed
-using Pkg
 using CSV
 using DataFrames
 
 addprocs(Threads.nthreads(); exeflags=`--threads=1`)
 println("Number of workers: ",nworkers())
 
-@everywhere using ExactCI
+@everywhere using ExactConfidenceIntervals
 @everywhere using Distributions
 
 @everywhere function gen_poisson(th,n,x)
@@ -43,3 +42,4 @@ y = df[:,"y"]
 x = Array(df[:,["x0","x1","x2"]])
 
 th, ci = exactci(y, x, generator=gen_poisson, likelihood=lik_poisson)
+
