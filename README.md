@@ -52,7 +52,7 @@ When defining the generator and likelihood functions, do not specify the input v
 - `num_sim`: Number of simulated random samples used when calculating probabilities under $\mathbb{P}^{\theta_i,\theta_{-i}}$.
 - `opt_max_iter`: Maximum iteration number for the numerical optimization when computing confidence intervals.
 - `positive`: Vector of indices of the parameters with a constraint $\theta_i\geq 0$. Reparameterize the model to impose different inequality constraints.
-- `prob_tol`: Tolerance level for the numerical solution. Defaults to 0.005, roughly indicating that the maximum bias of the confidence interval is 0.5%p.
+- `prob_tol`: Tolerance level for the numerical solution. Defaults to 0.005, roughly indicating that the maximum bias in the coverage probability of the confidence interval is 0.5%p.
 - `robust`: Degree of robustness check. Defaults to 3.
 - `seed`: Seed for random number generation. Defaults to `Xoshiro(0)`.
 
