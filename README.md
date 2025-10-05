@@ -27,6 +27,16 @@ th, ci = exactci(y, x, generator=function_name, likelihood=function_name)
 
 Replace `exactci` with `exactci_left` to obtain left-sided confidence intervals, and with `exactci_right` to obtain right-sided confidence intervals.
 
+## Multi-processing support
+
+To use multiple workers when computing confidence intervals, load the package on all workers.
+
+```julia
+julia> @everywhere using ExactConfidenceIntervals
+```
+
+The generator and likelihood functions must also be defined on all workers.
+
 ## Examples
 
 See `examples` folder.
