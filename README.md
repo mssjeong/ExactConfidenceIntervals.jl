@@ -35,7 +35,7 @@ To use multiple workers when computing confidence intervals, load the package on
 julia> @everywhere using ExactConfidenceIntervals
 ```
 
-The generator and likelihood functions must also be defined on all workers.
+The `generator` and `likelihood` functions must also be defined on all workers.
 
 ## Examples
 
