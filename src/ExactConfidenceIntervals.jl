@@ -2,6 +2,7 @@ module ExactConfidenceIntervals
 using Random
 using Distributions
 using LinearAlgebra
+using SpecialFunctions
 using Optim
 using LineSearches
 using FixedPointAcceleration
@@ -9,7 +10,6 @@ using PRIMA
 using Distributed
 using DistributedArrays
 using OffsetArrays
-using DoubleFloats
 export exactci_left, exactci_right, exactci
  
 function count_th(likelihoodc::Function,y::Array{Float64};external::Array{Float64}=[0.0])
@@ -2792,6 +2792,7 @@ function exactci(datax::Array{Float64},external::Array{Float64}=[0.0];
 end
 
 end
+
 
 
 
