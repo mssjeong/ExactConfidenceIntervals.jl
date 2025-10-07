@@ -39,7 +39,7 @@ The `generator` and `likelihood` functions must also be defined on all workers.
 
 ## Examples
 
-See `examples` folder.
+See [`examples`](https://github.com/mssjeong/ExactConfidenceIntervals.jl/tree/main/examples) folder.
 
 ## List of keyword arguments
 
