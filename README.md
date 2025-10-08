@@ -68,4 +68,4 @@ When defining the generator and likelihood functions, do not specify the input v
 
 ## Reference
 
-Jeong M (2023). “A numerical method to obtain exact confidence intervals for likelihood-based parameter estimators.” Journal of Statistical Planning and Inference, 226, 20–29. doi:10.1016/j.jspi.2022.12.006.
+Jeong M (2023). “A numerical method to obtain exact confidence intervals for likelihood-based parameter estimators.” Journal of Statistical Planning and Inference, 226, 20–29. [doi:10.1016/j.jspi.2022.12.006](https://doi.org/10.1016/j.jspi.2022.12.006).
