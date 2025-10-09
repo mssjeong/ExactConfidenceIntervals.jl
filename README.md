@@ -29,7 +29,7 @@ Replace `exactci` with `exactci_left` to obtain left-sided confidence intervals,
 
 ## Multi-processing support
 
-To use multiple workers when computing confidence intervals, load the package on all workers.
+To utilize multiple workers when computing confidence intervals, load the package on all workers as follows:
 
 ```julia
 julia> @everywhere using ExactConfidenceIntervals
