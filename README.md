@@ -45,8 +45,8 @@ See [`examples`](https://github.com/mssjeong/ExactConfidenceIntervals.jl/tree/ma
 
 ### Required
 
-- `generator`: Random sample generator of the model. Define the function such that `y::Array = function_name(th::Vector, n::Int)` for models without exogenous variables, and `y::Array = function_name(th::Vector, n::Int, x::Array)` for models with exogenous variables.
-- `likelihood`: Likelihood function of the model. Define the function such that `z::Float = function_name(th::Vector, y::Array)` for models without exogenous variables, and `z::Float = function_name(th::Vector, y::Array, x::Array)` for models with exogenous variables. When `format=:Float64`, it is recommended to define the likelihood function carefully to prevent numerical overflow or underflow. Utilizing functions from [SpecialFunctions.jl](https://github.com/JuliaMath/SpecialFunctions.jl) or [LogExpFunctions.jl](https://github.com/JuliaStats/LogExpFunctions.jl) would be helpful.
+- `generator`: Random sample generator of the model. Define the function such that `y::Array = function_name(theta::Vector, n::Int)` for models without exogenous variables, and `y::Array = function_name(theta::Vector, n::Int, x::Array)` for models with exogenous variables.
+- `likelihood`: Likelihood function of the model. Define the function such that `z::Float = function_name(theta::Vector, y::Array)` for models without exogenous variables, and `z::Float = function_name(theta::Vector, y::Array, x::Array)` for models with exogenous variables. When `format=:Float64`, it is recommended to define the likelihood function carefully to prevent numerical overflow or underflow. Utilizing functions from [SpecialFunctions.jl](https://github.com/JuliaMath/SpecialFunctions.jl) or [LogExpFunctions.jl](https://github.com/JuliaStats/LogExpFunctions.jl) would be helpful.
 
 When defining the generator and likelihood functions, do not specify the input variable types because they are assigned automatically according to the `format` keyword argument.
 
