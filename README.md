@@ -32,6 +32,8 @@ Replace `exactci` with `exactci_left` to obtain left-sided confidence intervals,
 To utilize multiple workers when computing confidence intervals, load the package on all workers as follows:
 
 ```julia
+julia> using Distributed
+julia> addprocs(Threads.nthreads(); exeflags=`--threads=1`)
 julia> @everywhere using ExactConfidenceIntervals
 ```
 
