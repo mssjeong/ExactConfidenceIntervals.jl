@@ -34,6 +34,7 @@ To utilize multiple workers when computing confidence intervals, load the packag
 ```julia
 julia> using Distributed
 julia> addprocs(Threads.nthreads(); exeflags=`--threads=1`)
+julia> println("Number of workers: ",nworkers())
 julia> @everywhere using ExactConfidenceIntervals
 ```
 
