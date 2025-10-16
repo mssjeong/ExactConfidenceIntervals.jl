@@ -27,6 +27,17 @@ th, ci = exactci(y, x, generator=function_name, likelihood=function_name)
 
 Replace `exactci` with `exactci_left` to obtain left-sided confidence intervals, and with `exactci_right` to obtain right-sided confidence intervals.
 
+## Required keyword arguments
+
+- `generator`: Random sample generator of the model. Define the function such that `y::Array = function_name(theta::Vector, n::Int)` for models without exogenous variables, and `y::Array = function_name(theta::Vector, n::Int, x::Array)` for models with exogenous variables.
+- `likelihood`: Likelihood function of the model. Define the function such that `z::Float = function_name(theta::Vector, y::Array)` for models without exogenous variables, and `z::Float = function_name(theta::Vector, y::Array, x::Array)` for models with exogenous variables. When `format=:Float64`, it is recommended to define the likelihood function carefully to prevent numerical overflow or underflow. Utilizing functions from [SpecialFunctions.jl](https://github.com/JuliaMath/SpecialFunctions.jl) or [LogExpFunctions.jl](https://github.com/JuliaStats/LogExpFunctions.jl) would be helpful.
+
+When defining the generator and likelihood functions, do not specify the input variable types because they are assigned automatically according to the `format` keyword argument.
+
+## Examples
+
+See [`examples`](https://github.com/mssjeong/ExactConfidenceIntervals.jl/tree/main/examples) folder.
+
 ## Multi-processing support
 
 To utilize multiple workers when computing confidence intervals, load the package on all workers as follows:
@@ -40,20 +51,7 @@ julia> @everywhere using ExactConfidenceIntervals
 
 The `generator` and `likelihood` functions must also be defined on all workers. The performance of multi-processing varies depending on the model.
 
-## Examples
-
-See [`examples`](https://github.com/mssjeong/ExactConfidenceIntervals.jl/tree/main/examples) folder.
-
-## List of keyword arguments
-
-### Required
-
-- `generator`: Random sample generator of the model. Define the function such that `y::Array = function_name(theta::Vector, n::Int)` for models without exogenous variables, and `y::Array = function_name(theta::Vector, n::Int, x::Array)` for models with exogenous variables.
-- `likelihood`: Likelihood function of the model. Define the function such that `z::Float = function_name(theta::Vector, y::Array)` for models without exogenous variables, and `z::Float = function_name(theta::Vector, y::Array, x::Array)` for models with exogenous variables. When `format=:Float64`, it is recommended to define the likelihood function carefully to prevent numerical overflow or underflow. Utilizing functions from [SpecialFunctions.jl](https://github.com/JuliaMath/SpecialFunctions.jl) or [LogExpFunctions.jl](https://github.com/JuliaStats/LogExpFunctions.jl) would be helpful.
-
-When defining the generator and likelihood functions, do not specify the input variable types because they are assigned automatically according to the `format` keyword argument.
-
-### Optional
+## Optional keyword arguments
 
 - `alpha`: Significance level of the confidence intervals. Defaults to 0.05.
 - `appx_order`: Order of the Taylor series to approximate the invariant quantile function. Defaults to 2.
