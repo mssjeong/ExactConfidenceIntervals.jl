@@ -1,6 +1,6 @@
 # ExactConfidenceIntervals.jl
 
-A Julia package for computing exact confidence intervals of maximum likelihood estimators, implementing the method proposed in [Jeong (2023)](https://doi.org/10.1016/j.jspi.2022.12.006).
+A Julia package for computing exact confidence intervals of maximum likelihood estimators in finite samples, implementing the method proposed in [Jeong (2023)](https://doi.org/10.1016/j.jspi.2022.12.006).
 
 ## Installation
 
