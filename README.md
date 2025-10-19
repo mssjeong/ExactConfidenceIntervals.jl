@@ -36,7 +36,7 @@ When defining the generator and likelihood functions, do not specify the input v
 
 ## Examples
 
-See [`examples`](https://github.com/mssjeong/ExactConfidenceIntervals.jl/tree/main/examples) folder.
+See [`examples`](https://github.com/mssjeong/ExactConfidenceIntervals.jl/tree/main/examples) folder. (asymmetric Laplace distribution, Cauchy distribution, Cox proportional hazard model, gamma distribution, GARCH process, Gumbel distribution, Heckman selection model, Lindley distribution, logistic regression, Ornstein-Uhlenbeck process, Poisson regression, probit regression)
 
 ## Multi-processing support
 
