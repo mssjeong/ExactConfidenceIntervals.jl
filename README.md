@@ -55,14 +55,14 @@ The `generator` and `likelihood` functions must also be defined on all workers. 
 
 - `alpha`: Significance level of the confidence intervals. Defaults to 0.05.
 - `appx_order`: Order of the Taylor series to approximate the invariant quantile function. Defaults to 2.
-- `bounded`: Vector of indices of the parameters with a constraint $-1\leq\theta_i\leq 1$. Reparameterize the model to impose different range constraints.
+- `bounded`: Vector of the indices of parameters with a constraint $-1\leq\theta_i\leq 1$. Reparameterize the model to impose different range constraints.
 - `format`: Number format for the parameter estimation. Available values are `:BigFloat` and `:Float64`. Defaults to `:Float64`.
 - `mle_init`: Vector of initial values of the model parameters for the maximum likelihood estimation. Defaults to a vector of 0.5s.
 - `mle_max_iter`: Maximum iteration number for the maximum likelihood estimation of model parameters.
 - `num_par`: Number of parameters of the model. Only needs to be specified when the automatic counting fails.
 - `num_sim`: Number of random samples used when calculating simulated probabilities.
 - `opt_max_iter`: Maximum iteration number for the numerical optimization when computing confidence intervals.
-- `positive`: Vector of indices of the parameters with a constraint $\theta_i\geq 0$. Reparameterize the model to impose different inequality constraints.
+- `positive`: Vector of the indices of parameters with a constraint $\theta_i\geq 0$. Reparameterize the model to impose different inequality constraints.
 - `prob_tol`: Tolerance level for the numerical solution. Defaults to 0.005, roughly indicating that the maximum bias in the coverage probability of the confidence interval is 0.5%p.
 - `robust`: Degree of robustness check. Defaults to 3.
 - `seed`: Seed for random number generation. Defaults to `Xoshiro(0)`.
