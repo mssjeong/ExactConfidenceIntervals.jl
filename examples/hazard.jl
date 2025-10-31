@@ -1,4 +1,4 @@
-# Cox proportional hazards model
+# Cox proportional hazards model (uncensored, no tie)
 using Distributed
 using CSV
 using DataFrames
@@ -32,4 +32,5 @@ y = df[:,"y"]
 x = Array(df[:,["x1","x2","x3"]])
 
 th, ci = exactci(y, x, generator=gen_hazard, likelihood=lik_hazard)
+
 
