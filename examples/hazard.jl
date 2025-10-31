@@ -1,4 +1,4 @@
-# Cox proportional hazards model (uncensored, no tie)
+# Cox proportional hazards model
 using Distributed
 using CSV
 using DataFrames
@@ -14,6 +14,7 @@ println("Number of workers: ",nworkers())
 end
 
 @everywhere function lik_hazard(th,y,x)
+# uncensored, no tie
     n = size(y,1)
     xth = x*th
 
@@ -32,5 +33,6 @@ y = df[:,"y"]
 x = Array(df[:,["x1","x2","x3"]])
 
 th, ci = exactci(y, x, generator=gen_hazard, likelihood=lik_hazard)
+
 
 
