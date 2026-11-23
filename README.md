@@ -25,7 +25,7 @@ Models with exogenous variables:
 th, ci = exactci(y, x, generator=function_name, likelihood=function_name)
 ```
 
-Replace `exactci` with `exactci_left` to obtain left-sided confidence intervals, and with `exactci_right` to obtain right-sided confidence intervals.
+Estimated parameter values are in `th` and their confidence intervals are in `ci`. Replace `exactci` with `exactci_left` to obtain left-sided confidence intervals, and with `exactci_right` to obtain right-sided confidence intervals.
 
 ## Required keyword arguments
 
