@@ -1922,7 +1922,7 @@ function exactci_ti(datax::Array{Float64},external::Array{Float64}=[0.0];
     else
         mg = copy(num_grid)
     end
-    if mle_init==[0]
+    if mle_init==[]
         if format==:BigFloat
             initv = BigFloat.(ones(nth).*0.5)
         else
@@ -2119,7 +2119,7 @@ function exactci_base(datax::Array{Float64},external::Array{Float64}=[0.0];
     else
         mg = copy(num_grid)
     end
-    if mle_init==[0]
+    if mle_init==[]
         if format==:BigFloat
             initv = BigFloat.(ones(nth).*0.5)
         else
@@ -2501,7 +2501,7 @@ function exactci_left(datax::Array{Float64},external::Array{Float64}=[0.0];
     likeli(th::Vector{Float64},y::Array{Float64},external::Array{Float64}) = -likelihood(th,y,external)
     likeli(th::Vector{BigFloat},y::Array{BigFloat},external::Array{BigFloat}) = -likelihood(th,y,external)
 
-    if mle_init==[0]
+    if mle_init==[]
         if format==:BigFloat
             initv = BigFloat.(ones(nth).*0.5)
         else
@@ -2599,7 +2599,7 @@ function exactci_right(datax::Array{Float64},external::Array{Float64}=[0.0];
     likeli(th::Vector{Float64},y::Array{Float64},external::Array{Float64}) = -likelihood(th,y,external)
     likeli(th::Vector{BigFloat},y::Array{BigFloat},external::Array{BigFloat}) = -likelihood(th,y,external)
 
-    if mle_init==[0]
+    if mle_init==[]
         if format==:BigFloat
             initv = BigFloat.(ones(nth).*0.5)
         else
@@ -2700,7 +2700,7 @@ function exactci(datax::Array{Float64},external::Array{Float64}=[0.0];
     likeli(th::Vector{Float64},y::Array{Float64},external::Array{Float64}) = -likelihood(th,y,external)
     likeli(th::Vector{BigFloat},y::Array{BigFloat},external::Array{BigFloat}) = -likelihood(th,y,external)
 
-    if mle_init==[0]
+    if mle_init==[]
         if format==:BigFloat
             initv = BigFloat.(ones(nth).*0.5)
         else
